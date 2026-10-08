@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ===== SEO & SHARING | عنوان ووصف الموقع في جوجل وعند المشاركة ===== -->
+  <title>Coach Soliman | Gym • Online Coaching</title>
+  <meta name="description" content="Coach Soliman: gym and online coaching. Book and subscribe via WhatsApp.">
+  <meta property="og:title" content="Coach Soliman | Gym and Online Coaching">
+  <meta property="og:description" content="Custom training and nutrition plans, and a fully equipped gym.">
+  <meta property="og:image" content="images/coach.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <meta name="theme-color" content="#101C2E">
+
+  <!-- ===== FONTS | الخطوط (لو غيرتها غيّر كمان --font-body و --font-heading في css/variables.css) ===== -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- ===== FONT AWESOME | مكتبة الأيقونات ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ===== STYLES | ملفات التصميم (الترتيب مهم) ===== -->
+  <link rel="stylesheet" href="css/variables.css">   <!-- colors, fonts, sizes -->
+  <link rel="stylesheet" href="css/base.css">        <!-- text, buttons, forms -->
+  <link rel="stylesheet" href="css/layout.css">      <!-- header, footer, page frame -->
+  <link rel="stylesheet" href="css/components.css">  <!-- cards, plans, photos, FAQ -->
+  <link rel="stylesheet" href="css/sections.css">    <!-- hero, coach page, contact -->
+  <link rel="stylesheet" href="css/extras.css">      <!-- extra features -->
+  <link rel="stylesheet" href="css/responsive.css">  <!-- phone layout (keep last) -->
+</head>
+<body>
+
+<!-- =====================================================================
+     HOW THIS FILE WORKS | إزاي الملف ده شغال
+     - Headings and paragraphs you see below are edited right here.
+     - Empty boxes (like id="reviews") are filled automatically from
+       js/data/*.js. Don't delete them; edit the data file instead.
+     - العناوين والفقرات بتتعدل هنا مباشرة.
+     - الصناديق الفاضية (زي id="reviews") بتتملى لوحدها من js/data/.
+       متمسحهاش، عدّل ملف البيانات.
+     ===================================================================== -->
+
+<!-- ===== PROMO BAR | بانر العروض (النص في js/data/site.js) ===== -->
+<div id="promo" class="promo" hidden></div>
+
+<!-- ===== HEADER | الهيدر (القايمة في js/data/site.js) ===== -->
+<header>
+  <a href="#home" class="logo" aria-label="Coach Soliman"><img src="images/logo.png" alt="" class="logo-mark"><span>Coach <b>Soliman</b></span></a>
+  <nav id="nav"></nav>
+  <button class="theme-btn lang-btn" id="langBtn" aria-label="Switch language" type="button">ع</button>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">◐</button>
+</header>
+
+<main>
+
+  <!-- ===================== PAGE: HOME | الرئيسية ===================== -->
+  <section class="page" id="home">
+    <div class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="images/hero.jpg" alt="" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero-content">
+        <h1>The iron won't lift itself.</h1>
+        <p>A fully equipped gym and online coaching built around you.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent" href="#online">Start your journey</a>
+          <a class="btn btn-ghost" href="#gym">Visit the gym</a>
+          <a class="btn btn-ghost" href="#recovery">Recovery</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="paths">
+      <a class="path" href="#online">
+        <h3>Online Coaching</h3>
+        <p>A custom training and nutrition plan, with weekly WhatsApp check-ins from anywhere.</p>
+        <span>See packages →</span>
+      </a>
+      <a class="path" href="#gym">
+        <h3>The Gym</h3>
+        <p>Imported machines, air conditioning, and separate women's and men's hours.</p>
+        <span>See memberships →</span>
+      </a>
+    </div>
+
+    <h2>What members say</h2>
+    <div class="grid" id="reviews"></div>          <!-- js/data/content.js → reviews -->
+
+    <h2>FAQ</h2>
+    <div id="faq"></div>                           <!-- js/data/content.js → faq -->
+  </section>
+
+  <!-- ===================== PAGE: ONLINE COACHING | الأونلاين ===================== -->
+  <section class="page" id="online">
+    <h2>Online Coaching</h2>
+    <p class="lead">Video-guided programs, a nutrition plan built for you, and weekly follow-up on WhatsApp. Train at the gym or at home, with me in your corner.</p>
+    <div class="grid" id="onlineBenefits"></div>  <!-- js/data/content.js → onlineBenefits -->
+
+    <h2>Packages</h2>
+    <div class="grid" id="onlinePlans"></div>      <!-- js/data/pricing.js → online -->
+
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+
+    <h2>Client results</h2>
+    <div class="grid" id="results"></div>          <!-- js/data/content.js → results -->
+
+    <h2>Subscribe now</h2>
+    <p class="lead">Answer a few quick questions and your request goes straight to my WhatsApp.</p>
+    <form class="card" id="fOnline">
+      <label>Name<input name="name" required></label>
+      <div class="row">
+        <label>Weight (kg)<input name="weight" type="number" inputmode="decimal" required></label>
+        <label>Height (cm)<input name="height" type="number" inputmode="decimal" required></label>
+      </div>
+      <label>Goal<select name="goal" data-lead-goals></select></label>
+      <label>Package<select name="plan" id="planSel"></select></label>
+      <button class="btn" type="submit">Send request on WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- ===================== PAGE: SUBSCRIBE | صفحة الاشتراك (مش في القايمة) ===================== -->
+  <section class="page" id="join">
+    <h2>Subscribe</h2>
+    <p class="lead">Fill in your details, choose your package, and your request opens on the coach's WhatsApp in a new window.</p>
+    <form class="card" id="fJoin">
+      <label>Package<select name="plan" id="joinPlan"></select></label>
+      <label>Name<input name="name" required></label>
+      <div class="row">
+        <label>Weight (kg)<input name="weight" type="number" inputmode="decimal" required></label>
+        <label>Height (cm)<input name="height" type="number" inputmode="decimal" required></label>
+      </div>
+      <label>Goal<select name="goal" data-lead-goals></select></label>
+      <button class="btn" type="submit">Send request on WhatsApp</button>
+    </form>
+    <p class="back-link"><a href="#online">← Back to packages</a></p>
+  </section>
+
+  <!-- ===================== PAGE: GYM | الجيم ===================== -->
+  <section class="page" id="gym">
+    <h2>The Gym</h2>
+    <p class="lead">Plenty of space, good lighting, imported machines, and a clean floor you'll notice from day one.</p>
+    <div class="grid" id="gallery"></div>          <!-- js/data/content.js → gallery -->
+
+    <h2>Facilities</h2>
+    <div class="chips" id="features"></div>        <!-- js/data/content.js → features -->
+
+    <h2>Memberships</h2>
+    <p class="lead">Every package includes an InBody scan, a personalized nutrition plan and a personalized training program.</p>
+    <div id="gymPlans"></div>                      <!-- js/data/pricing.js → gymCategories -->
+    <div class="card friends" id="friendsOffer"></div>  <!-- js/data/pricing.js → friendsOffer -->
+
+    <h2>Kids Academy</h2>
+    <p class="lead">Martial arts and fitness classes for kids, taught by specialized instructors.</p>
+    <div class="grid" id="kidsPlans"></div>        <!-- js/data/pricing.js → kidsAcademy -->
+
+    <h2>Book a free trial</h2>
+    <p class="lead">Pick a time that suits you and we'll confirm on WhatsApp.</p>
+    <form class="card" id="fTrial">
+      <label>Name<input name="name" required></label>
+      <div class="row">
+        <label>Phone<input name="phone" type="tel" inputmode="tel" required></label>
+        <label>Preferred time<select name="time"></select></label>
+      </div>
+      <label>Goal<select name="goal" data-lead-goals></select></label>
+      <button class="btn" type="submit">Book on WhatsApp</button>
+    </form>
+
+    <h2>Hours &amp; contact</h2>
+    <div class="card">
+      <h3>Opening hours</h3>
+      <div id="openNow"></div>
+      <p id="hours"></p>                           <!-- js/data/site.js → hours -->
+      <p class="contact-line" id="addressLine">
+        Address: <span data-text="site.address" dir="auto"></span>
+        <a id="mapLink" target="_blank" rel="noopener">· Open map</a>
+        <button class="linkbtn" id="copyAddr" type="button">· Copy</button>
+      </p>
+      <p class="contact-line">Call: <a data-tel></a></p>
+      <div class="contact-actions">
+        <a class="btn btn-ghost" data-wa-msg="quick.membership">Ask about membership</a>
+        <a class="btn btn-accent" data-wa-msg="quick.trial">Book a free trial</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PAGE: RECOVERY | الريكفري ===================== -->
+  <section class="page" id="recovery">
+    <h2>Recovery</h2>
+    <p class="lead">Choose the recovery package that suits you.</p>
+    <div class="grid" id="recoveryPlans"></div>   <!-- js/data/pricing.js → recovery -->
+  </section>
+
+  <!-- ===================== PAGE: COACH | الكوتش ===================== -->
+  <section class="page" id="coach">
+    <h2>Meet the coach</h2>
+    <div class="coach">
+      <img data-photo alt="">
+      <div>
+        <h3 class="coach-name" data-text="content.coach.name"></h3>
+        <p class="lead" data-text="content.coach.bio"></p>
+        <div class="stats" id="stats"></div>       <!-- js/data/content.js → coach.stats -->
+        <div class="chips" id="certs"></div>       <!-- js/data/content.js → coach.certificates -->
+        <a class="btn coach-cta" data-wa-msg="quick.coach">Message the coach</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PAGE: CALCULATOR | الحاسبة ===================== -->
+  <!-- ===================== PAGE: CALCULATOR | الحاسبة ===================== -->
+  <!-- ===================== PAGE: CALCULATOR | الحاسبة ===================== -->
+  <!-- ===================== PAGE: CALCULATOR | الحاسبة ===================== -->
+  <!-- ===================== PAGE: CALCULATOR | الحاسبة ===================== -->
+  <!-- ===================== PAGE: CALCULATOR | الحاسبة ===================== -->
+  <!-- ===================== PAGE: CALCULATOR | الحاسبة ===================== -->
+  <!-- ===================== PAGE: CALCULATOR | الحاسبة ===================== -->
+  <!-- ===================== PAGE: CALCULATOR | الحاسبة ===================== -->
+  <section class="page" id="tools">
+    <h2>Body calculator</h2>
+    <p class="lead">Get your BMI, daily calories and a protein target in seconds. Then send the numbers to the coach for a real plan.</p>
+
+
+
+
+
+    <form class="card" id="fCalc">
+
+
+      <div>
+        <label>Name<input name="name" type="text" min="3" placeholder="Enter Your Name" required></label>
+      </div>
+
+      <div class="row">
+        <label>Gender
+          <select name="sex"><option value="m">Male</option><option value="f">Female</option></select>
+        </label>
+        <label>Age<input name="age" type="number" min="14" max="90" required></label>
+      </div>
+      <div class="row">
+        <label>Weight (kg)<input name="weight" type="number" min="30" max="300" step="0.1" required></label>
+        <label>Height (cm)<input name="height" type="number" min="120" max="230" required></label>
+      </div>
+      <label>Activity
+        <select name="activity">
+          <option value="1.2">Little or no exercise</option>
+          <option value="1.375">Light (1-3 days/week)</option>
+          <option value="1.55" selected>Moderate (3-5 days/week)</option>
+          <option value="1.725">Heavy (6-7 days/week)</option>
+        </select>
+      </label>
+      <label>Goal<select name="goal" id="calcGoal"></select></label>   <!-- js/data/settings.js → calculator.goals -->
+      <button class="btn" type="submit">Calculate</button>
+    </form>
+
+
+
+
+
+    <div id="calcOut"></div>
+    <p class="note disclaimer">Estimates only, not medical advice.</p>
+
+    <h2>Strength calculator (1RM)</h2>
+    <p class="lead">Enter a set you just lifted and get your estimated one-rep max, plus working weights.</p>
+    <form class="card" id="fRm">
+      <div class="row">
+        <label>Weight lifted (kg)<input name="w" type="number" min="1" step="0.5" required></label>
+        <label>Reps<input name="r" type="number" min="1" max="12" required></label>
+      </div>
+      <button class="btn" type="submit">Estimate 1RM</button>
+    </form>
+    <div id="rmOut"></div>
+
+    <h2>Rest timer</h2>
+    <div class="card timer">
+      <div class="timer-time" id="tTime" aria-live="polite">01:30</div>
+      <div class="chips" id="tPresets"></div>
+      <div class="contact-actions">
+        <button class="btn" id="tStart" type="button">Start</button>
+        <button class="btn btn-ghost" id="tReset" type="button">Reset</button>
+      </div>
+    </div>
+
+    <h2>Progress tracker</h2>
+    <p class="lead">Log your weight and watch the trend. Saved only on this device.</p>
+    <form class="card" id="fLog">
+      <div class="row">
+        <label>Date<input name="d" type="date" required></label>
+        <label>Weight (kg)<input name="w" type="number" min="30" max="300" step="0.1" required></label>
+      </div>
+      <button class="btn" type="submit">Add entry</button>
+    </form>
+    <div class="card" id="logChart"></div>
+    <p class="back-link"><button class="btn btn-ghost" id="logClear" type="button">Clear log</button></p>
+  </section>
+
+  <!-- ===================== PAGE: CONTACT | التواصل ===================== -->
+  <section class="page" id="contact">
+    <h2>Contact us</h2>
+    <p class="lead">WhatsApp is the fastest way to reach us. You can also find us on every platform.</p>
+    <div class="soc" id="soc"></div>               <!-- js/data/site.js → socials -->
+    <p class="back-link"><button class="btn btn-ghost" id="shareBtn" type="button">Share this site</button></p>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER | الفوتر ===== -->
+<footer>© Coach Soliman. Every request goes straight to WhatsApp.</footer>
+
+<!-- ===== PHOTO VIEWER | عارض الصور (متعدلش) ===== -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-x" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next photo">›</button>
+  <p class="lb-cap" id="lbCap"></p>
+</div>
+
+<!-- ===== FLOATING WHATSAPP BUTTON | زرار الواتساب العايم (الرسالة في js/data/messages.js) ===== -->
+<a class="wa" data-wa-msg="quick.question" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.7A13 13 0 1 0 16 3zm0 23.700c-2 0-3.900-.6-5.500-1.600l-.4-.2-4 1 1.100-3.900-.3-.4A10.700 10.700 0 1 1 16 26.700zm5.900-8c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7.100a8.800 8.800 0 0 1-4.400-3.800c-.3-.6.300-.5.900-1.700.1-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6a1.200 1.200 0 0 0-.9.400 3.700 3.700 0 0 0-1.100 2.700c0 1.600 1.100 3.200 1.300 3.400s2.300 3.500 5.600 4.900c2 .8 2.800.9 3.800.7.600-.1 1.900-.8 2.100-1.500s.3-1.400.2-1.500-.3-.2-.6-.3z"/></svg></a>
+
+
+
+
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="lbbmMzwf8qkj6H5YQGO1x";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+<!-- ===== SCRIPTS | ملفات الجافاسكريبت (الترتيب مهم: البيانات الأول ثم المنطق) ===== -->
+<!-- Data: what you edit | البيانات: اللي بتعدله -->
+<script src="js/data/site.js"></script>
+<script src="js/data/pricing.js"></script>
+<script src="js/data/content.js"></script>
+<script src="js/data/messages.js"></script>
+<script src="js/data/settings.js"></script>
+<script src="js/data/extras.js"></script>
+<!-- Logic: rarely needs editing | المنطق: نادرًا تحتاج تعدله -->
+<script src="js/app/helpers.js"></script>
+<script src="js/app/render.js"></script>
+<script src="js/app/lightbox.js"></script>
+<script src="js/app/forms.js"></script>
+<script src="js/app/calculator.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/extras.js"></script>   <!-- must stay after app.js -->
+<script src="js/app/tools.js"></script>    <!-- tools: after extras.js -->
+<script src="js/app/i18n.js"></script>     <!-- language switch (EN/AR): keep last -->
+
+</body>
+</html>
